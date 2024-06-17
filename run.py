@@ -620,7 +620,7 @@ async def main():
             print(f'邀请码: {incode} ==> 邀请成功, 用时: {run_time} 秒')
         else:
             print(f'邀请码: {incode} ==> 邀请失败, 用时: {run_time} 秒')
-        input('按回车键再次邀请!!!')
+      #  input('按回车键再次邀请!!!')
         await main()
     except Exception as e:
         print(f'异常捕获:{e}')
