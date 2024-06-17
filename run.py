@@ -11,7 +11,7 @@ import recognize
 from rich import print_json
 
 DEBUG_MODE = False # Debug模式，是否打印请求返回信息
-PROXY = input('请输入代理，如不需要直接回车:') # 代理，如果多次出现IP问题可尝试将自己所用的魔法设置为代理。例如：使用clash则设置为 'http://127.0.0.1:7890'
+# PROXY = input('请输入代理，如不需要直接回车:') # 代理，如果多次出现IP问题可尝试将自己所用的魔法设置为代理。例如：使用clash则设置为 'http://127.0.0.1:7890'
 # PROXY = 'http://127.0.0.1:7890'
 
 # 滑块数据加密
@@ -588,7 +588,7 @@ async def main():
     # print('本脚本是固定滑动次数,多次碰撞验证版！！')
     # print('成功与否全凭运气, 可能几次就成功, 也可能几十次都不成功, 请自行测试, 祝使用愉快!')
     try:
-        incode = input('请输入邀请码:')
+        incode = '92233078'
         start_time = time.time()
         xid = str(uuid.uuid4()).replace("-", "")
         mail = await get_mail()
