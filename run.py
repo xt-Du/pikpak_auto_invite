@@ -588,7 +588,6 @@ async def main():
     count = 0
     # print('本脚本是固定滑动次数,多次碰撞验证版！！')
     # print('成功与否全凭运气, 可能几次就成功, 也可能几十次都不成功, 请自行测试, 祝使用愉快!')
-    for _ in range(2):
     try:
         incode = '92233078'
         start_time = time.time()
