@@ -621,12 +621,13 @@ async def main():
         else:
             print(f'邀请码: {incode} ==> 邀请失败, 用时: {run_time} 秒')
       #  input('按回车键再次邀请!!!')
-        await main()
+       # await main()
+        exit(2)
     except Exception as e:
         print(f'异常捕获:{e}')
         print('请检查网络环境,(开启科学上网)重试!!!')
        # input('按回车键重试!!!')
-        await main()
-
+       # await main()
+        exit(2)
 
 asyncio.run(main())
