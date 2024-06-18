@@ -585,7 +585,6 @@ async def activation_code(access_token, captcha, xid, in_code):
 
 
 async def main():
-    count = 0
     # print('本脚本是固定滑动次数,多次碰撞验证版！！')
     # print('成功与否全凭运气, 可能几次就成功, 也可能几十次都不成功, 请自行测试, 祝使用愉快!')
     try:
@@ -615,7 +614,6 @@ async def main():
         init2_response = await init2(xid, signup_response['access_token'], signup_response['sub'], sign, current_time)
         activation = await activation_code(signup_response['access_token'], init2_response['captcha_token'], xid,
                                            incode)
-        count += 1
         end_time = time.time()
         run_time = f"{(end_time - start_time):.2f}"
         if activation['add_days'] == 5:
@@ -623,16 +621,15 @@ async def main():
         else:
             print(f'邀请码: {incode} ==> 邀请失败, 用时: {run_time} 秒')
       #  input('按回车键再次邀请!!!')
-        if count >= 2:  # 判断是否达到两次运行
-            exit(0)  # 退出函数
-        await asyncio.sleep(30)  # 添加30秒延时
         await main()
     except Exception as e:
         print(f'异常捕获:{e}')
         print('请检查网络环境,(开启科学上网)重试!!!')
        # input('按回车键重试!!!')
-        if count >= 2:  # 判断是否达到两次运行
-            exit(0)  # 退出函数
-        await asyncio.sleep(30)
         await main()
 asyncio.run(main())
+    count = 0
+    count += 1
+    if count >= 2:  # 判断是否达到两次运行
+            exit(0)  # 退出函数
+    await asyncio.sleep(30)
