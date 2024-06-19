@@ -624,10 +624,8 @@ async def main():
             print(f'邀请码: {incode} ==> 邀请失败, 用时: {run_time} 秒')
       #  input('按回车键再次邀请!!!')
         if count >= 2:  # 判断是否达到两次运行
-            exit(0)  # 退出函数
-        else:
-            await asyncio.sleep(30)
-            await main()
+            return  # 退出函数
+        await asyncio.sleep(30)
     except Exception as e:
         print(f'异常捕获:{e}')
         print('请检查网络环境,(开启科学上网)重试!!!')
