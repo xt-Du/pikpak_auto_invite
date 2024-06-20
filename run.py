@@ -589,7 +589,7 @@ async def main():
     # print('本脚本是固定滑动次数,多次碰撞验证版！！')
     # print('成功与否全凭运气, 可能几次就成功, 也可能几十次都不成功, 请自行测试, 祝使用愉快!')
     try:
-        incode = '92233078'
+        incode = '88365609'
         start_time = time.time()
         xid = str(uuid.uuid4()).replace("-", "")
         mail = await get_mail()
